@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nit_andhra/pages/auth/faculty_login_page.dart';
 import 'package:nit_andhra/pages/auth/student_login_page.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:simple_permissions/simple_permissions.dart';
+//import 'package:simple_permissions/simple_permissions.dart';
 
 class LoginPage extends StatefulWidget {
   @override

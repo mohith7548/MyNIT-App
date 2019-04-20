@@ -69,7 +69,7 @@ class _MyNitState extends State<MyNit> {
     firebaseUser = await _auth.currentUser().catchError((error) {
       print(error);
     });
-    print(firebaseUser.toString());
+    print('FirebaseUser: ${firebaseUser.toString()}');
     if (firebaseUser != null) {
       // shared preferences are retrieved only when user is present i.e, SignedIn.
       _getSharedPreferences();

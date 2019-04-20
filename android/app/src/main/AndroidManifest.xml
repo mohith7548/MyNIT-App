@@ -44,16 +44,16 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
         </receiver>
-        <provider
-                android:name="android.support.v4.content.FileProvider"
-                tools:replace="android:authorities"
-                android:authorities="me.albie.share"
-                android:exported="false"
-                android:grantUriPermissions="true">
-            <meta-data
-                    android:name="android.support.FILE_PROVIDER_PATHS"
-                    tools:replace="android:resource"
-                    android:resource="@xml/file_paths" />
-        </provider>
+<!--        <provider-->
+<!--                android:name="android.support.v4.content.FileProvider"-->
+<!--                tools:replace="android:authorities"-->
+<!--                android:authorities="me.albie.share"-->
+<!--                android:exported="false"-->
+<!--                android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                    android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                    tools:replace="android:resource"-->
+<!--                    android:resource="@xml/file_paths" />-->
+<!--        </provider>-->
     </application>
 </manifest>
