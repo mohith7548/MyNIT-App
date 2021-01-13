@@ -7,6 +7,12 @@ However this project couldn't takeoff back then, so I wish to opensource.
 ## Techstack
 - [Flutter](https://flutter.dev/)
 - [Firebase](https://firebase.google.com/docs/flutter/setup)
+  - Authentication (Email must be enabled)
+  - Realtime Database (This needs to be intialized with students basic details. Refer below)
+  - Firestore
+  - Storage
+
+<br>
 
 ## Screenshots
 |                Login Page                 |                  Student Signup                   |                  Student Login                  |
@@ -58,6 +64,15 @@ However this project couldn't takeoff back then, so I wish to opensource.
 | :---------------------------------------: | :-------------------------------------: |
 | ![Add Post](screenshots/profile_page.jpg) | ![Profile Page](screenshots/logout.jpg) |
 
+<br>
+
+Firebase Realtime DB(This must be populated with students basic details)
+![Firebase Realtime DB](screenshots/firebase_realtime_db.jpg)
+
+<br>
+
+Firebase Firestore
+![Firebase Firestore](screenshots/firebase_firestore.jpg)
 
 <br>
 
