@@ -117,21 +117,17 @@ class _BlogPageState extends State<BlogPage>
   Widget _buildAddPostFab() {
     return (appState.user.dailyBlogLimit >= 2)
         ? Container()
-        : Container(
-            height: 56.0 * _animation.value,
-            width: 56.0 * _animation.value,
-            child: FloatingActionButton(
-              child: Icon(Icons.mode_edit),
-              tooltip: 'Add a Post',
-              onPressed: () {
-                // Send to AddPostPage
-                methods.sendTo(
-                  context: context,
-                  page: AddPostPage(),
-                  appState: appState,
-                );
-              },
-            ),
+        : FloatingActionButton(
+            child: Icon(Icons.mode_edit),
+            tooltip: 'Add a Post',
+            onPressed: () {
+              // Send to AddPostPage
+              methods.sendTo(
+                context: context,
+                page: AddPostPage(),
+                appState: appState,
+              );
+            },
           );
   }
 }

@@ -88,19 +88,22 @@ class _DevProfileState extends State<DevProfile> {
 
   Widget _buildContent() {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          _buildAvatar(),
-          _buildInfo(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            _buildAvatar(),
+            _buildInfo(),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildInfo() {
     return Container(
-      margin: const EdgeInsets.all(16.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

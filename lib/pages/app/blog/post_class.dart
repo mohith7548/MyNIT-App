@@ -24,7 +24,7 @@ class Post {
         snapshot.data['postOwner'],
         snapshot.data['postDescription'],
         snapshot.data['postOwnerImageUrl'],
-        snapshot.data['postTime'],
+        (snapshot.data['postTime'] as Timestamp).toDate(),
         snapshot.data['postLikes'],
       );
 

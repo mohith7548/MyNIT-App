@@ -12,8 +12,9 @@ import 'package:nit_andhra/pages/app/profile/edit_profile_page.dart';
 import 'package:nit_andhra/methods.dart' as methods;
 
 void main() {
-  FirebaseDatabase.instance.setPersistenceEnabled(true);
-  FirebaseDatabase.instance.setPersistenceCacheSizeBytes(10000000);
+  // FirebaseDatabase.instance.setPersistenceEnabled(true);
+  // FirebaseDatabase.instance.setPersistenceCacheSizeBytes(10000000);
+  // WidgetsFlutterBinding.ensureInitialized();
   runApp(MyNit());
 }
 
@@ -47,20 +48,20 @@ class _MyNitState extends State<MyNit> {
       debugShowCheckedModeBanner: false,
       home: (_isSignedIn)
           ? ((_isLoading)
-      // TODO: Replace wth splash screen
-          ? Scaffold(body: Center(child: CircularProgressIndicator()))
-          : ((hasNoProfile)
-          ? AppState(
-          firebaseUser: firebaseUser,
-          user: user,
-          child: EditProfilePage())
-          : AppState(
-        firebaseUser: firebaseUser,
-        user: user,
-        isDarkThemeEnabled: _isDarkThemeEnabled,
-        changeTheme: () => _changeTheme(),
-        child: MainApp(firebaseUser: firebaseUser),
-      )))
+              // TODO: Replace wth splash screen
+              ? Scaffold(body: Center(child: CircularProgressIndicator()))
+              : ((hasNoProfile)
+                  ? AppState(
+                      firebaseUser: firebaseUser,
+                      user: user,
+                      child: EditProfilePage())
+                  : AppState(
+                      firebaseUser: firebaseUser,
+                      user: user,
+                      isDarkThemeEnabled: _isDarkThemeEnabled,
+                      changeTheme: () => _changeTheme(),
+                      child: MainApp(firebaseUser: firebaseUser),
+                    )))
           : AppCarousel(),
     );
   }
@@ -82,7 +83,8 @@ class _MyNitState extends State<MyNit> {
 
   void _getSharedPreferences() async {
     type = await methods.getPrefs(saveInName: 'type');
-    _isDarkThemeEnabled = await methods.getPrefs(saveInName: 'isDarkThemeEnabled') ?? false;
+    _isDarkThemeEnabled =
+        await methods.getPrefs(saveInName: 'isDarkThemeEnabled') ?? false;
     print('_isDarkThemeEnabled: $_isDarkThemeEnabled --> ${DateTime.now()}');
     print('type: $type');
     col = 'users-$type';

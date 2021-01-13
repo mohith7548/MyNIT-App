@@ -8,8 +8,9 @@ import 'package:nit_andhra/pages/app/app_state.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-//import 'package:flutter_image_pick_crop/flutter_image_pick_crop.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:nit_andhra/methods.dart' as methods;
+// import 'package:simple_permissions/simple_permissions.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -30,9 +31,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
   bool _isFirstTime = true;
   bool _isEditable = true;
 
-  String _platformMessage = 'Unknown';
-  String _camera = 'fromCameraCropImage';
-  String _gallery = 'fromGalleryCropImage';
   File imageFile;
   bool _isImageSelected = false;
 
@@ -141,21 +139,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   initGalleryPickUp() async {
-    String result;
+    // PermissionStatus permissionResult =
+    //     await SimplePermissions.requestPermission(
+    //         Permission.WriteExternalStorage);
+    // if (permissionResult == PermissionStatus.authorized) {
+    // }
+
     _isImageSelected = true;
-    try {
-//      result = await FlutterImagePickCrop.pickAndCropImage(_gallery);
-    } catch (e) {
-      result = e.message;
-      _isImageSelected = false;
-      print(e.message);
-    }
+    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     if (!mounted) return;
 
     setState(() {
-      imageFile = new File(result);
-      _platformMessage = result;
+      imageFile = image;
     });
   }
 

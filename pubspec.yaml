@@ -32,16 +32,15 @@ dependencies:
   firebase_messaging: ^4.0.0+3
   shared_preferences: ^0.4.3
   validate:
-  image_picker: ^0.5.4
-  cached_network_image:
+  image_picker: ^0.6.6+5
+  cached_network_image: ^2.0.0-rc
   url_launcher: ^4.2.0+1
   timeago: ^2.0.10
   path_provider: #0.4.1
   http: ^0.12.0
   intl:
-#  simple_permissions: ^0.1.9
+  # simple_permissions: ^0.1.9
   flutter_local_notifications: ^0.6.1
-#  flutter_image_pick_crop:
 
 dev_dependencies:
   flutter_test:

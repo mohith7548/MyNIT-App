@@ -202,13 +202,14 @@ class _SinglePostState extends State<SinglePost> {
             tag: '${widget.document.reference.path}',
             child: GestureDetector(
               onTap: () => methods.sendTo(
-                    context: context,
-                    page: OpenImage(document: widget.document),
-                    appState: appState,
-                  ),
+                context: context,
+                page: OpenImage(document: widget.document),
+                appState: appState,
+              ),
               child: CachedNetworkImage(
                 imageUrl: widget.document['postImageUrl'],
-                placeholder: Image.asset('assets/images/image_placeholder.png'),
+                placeholder: (context, _) =>
+                    Image.asset('assets/images/image_placeholder.png'),
               ),
             ),
           ),

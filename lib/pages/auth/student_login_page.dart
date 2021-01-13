@@ -78,7 +78,7 @@ class _StudentLoginPageState extends State<StudentLoginPage> {
         String _offEmail = snapshot.value['email'];
         String _signedin = snapshot.value['signedin'];
         print(snapshot.value['rollNo'].runtimeType);
-        String _rollNo = snapshot.value['rollNo'];
+        String _rollNo = snapshot.value['rollNo'].toString();
         _fullName = snapshot.value['fullName'];
         _branch = snapshot.value['branch'];
         print(
@@ -282,6 +282,7 @@ class _StudentLoginPageState extends State<StudentLoginPage> {
   }
 
   void handleError(String s) {
+    print("err:$s");
     setState(() {
       _inProgress = false;
     });
